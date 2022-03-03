@@ -15,4 +15,28 @@ public class FunWith2DArrays {
         System.out.println(bottomLeft);
         System.out.println(bottomRight);
     }
+
+    public static double average(int[][] arr){
+        double sum = 0;
+        int totalNum = totalElements(arr);
+        for(int[] row : arr){
+            for(int num : row){
+                sum += num;
+            }
+        }
+        return sum / totalNum;
+    }
+
+    public static int[] indexFound(String[][] arr, String target){
+        int[] output = {-1, -1};
+        for(int i = 0; i < arr.length; i++){
+            for(int j = 0; j < arr[0].length; j++){
+                if(arr[i][j].equals(target)){
+                    output[0] = i;
+                    output[1] = j;
+                }
+            }
+        }
+        return output;
+    }
 }
